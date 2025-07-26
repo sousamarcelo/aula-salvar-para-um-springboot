@@ -23,12 +23,12 @@ public class PersonService {
 		entity.setName(dto.getName());
 		entity.setSalary(dto.getSalary());
 		
-		//nesse exemplo não retorna o nome do objeto, apenas cria um novo com as informações do json, no caso somente o id, sem nome, nao é um objeto monitorado pela jpa
+		//nesse exemplo não retorna o nome do objeto, apenas cria um novo com as informações do json, no caso somente o id, sem nome, nao é um objeto monitorado pela jpa. entidade transiente(não gerenciada pela jpa)
 		//Department dept = new Department()
 		//dept.setId(dto.getDepartment().getId());
 		
 		
-		//nesse exemplo retorna o objeto completo do id informado, porque está sendo obtido o id do banxo
+		//nesse exemplo retorna o objeto completo do id informado, porque está sendo obtido o id do banco. é uma entidade gerenciada, por isso trousse o objeto do departamento completo
 		Department dept = departmentRepository.getReferenceById(dto.getDepartment().getId());
 			
 		
